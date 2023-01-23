@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <label>Nome:</label>
+      <input type="text" id="firstName" name="firstName" />
+      <br />
+      <label>Cognome:</label>
+      <input type="text" id="lastName" name="lastName" />
+      <br />
+      <label>Data di nascita:</label>
+      <input type="text" id="birthdate" name="birthdate" />
+      <br />
+      <input type="button" value="Aggiungi" onclick="addToTable()" />
+    </form>
+    <table id="myTable" style="display: none">
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Data di nascita</th>
+      </tr>
+    </table>
+
+    <script>
+      function addToTable() {
+        // Crea un oggetto con i dati del form
+        let person = {
+          firstName: document.getElementById("firstName").value,
+          lastName: document.getElementById("lastName").value,
+          birthdate: document.getElementById("birthdate").value,
+        };
+        // Crea una riga della tabella
+        let row = document.createElement("tr");
+        // Crea celle per ogni dato dell'oggetto
+        let firstNameCell = document.createElement("td");
+        let lastNameCell = document.createElement("td");
+        let birthdateCell = document.createElement("td");
+        // Imposta il contenuto delle celle con i dati dell'oggetto
+        firstNameCell.innerHTML = person.firstName;
+        lastNameCell.innerHTML = person.lastName;
+        birthdateCell.innerHTML = person.birthdate;
+        // Aggiunge le celle alla riga
+        row.appendChild(firstNameCell);
+        row.appendChild(lastNameCell);
+        row.appendChild(birthdateCell);
+        // Aggiunge la riga alla tabella
+        let table = document.getElementById("myTable");
+        table.appendChild(row);
+        table.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
