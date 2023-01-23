@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>esercizio</title>
   </head>
   <body>
     <form id="myForm">
@@ -17,7 +18,12 @@
       <label>Data di nascita:</label>
       <input type="text" id="birthdate" name="birthdate" />
       <br />
-      <input type="button" value="Aggiungi" onclick="addToTable()" />
+      <input
+        type="button"
+        value="Aggiungi"
+        onclick="addToTable()"
+        style="display: inline"
+      />
     </form>
     <table id="myTable" style="display: none">
       <tr>
