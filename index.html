@@ -28,13 +28,20 @@
     </table>
 
     <script>
+      function Person(firstName, lastName, birthdate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthdate = birthdate;
+      }
+
       function addToTable() {
         // Crea un oggetto con i dati del form
-        let person = {
-          firstName: document.getElementById("firstName").value,
-          lastName: document.getElementById("lastName").value,
-          birthdate: document.getElementById("birthdate").value,
-        };
+        let person = new Person(
+          document.getElementById("firstName").value,
+          document.getElementById("lastName").value,
+          document.getElementById("birthdate").value
+        );
+
         // Crea una riga della tabella
         let row = document.createElement("tr");
         // Crea celle per ogni dato dell'oggetto
